@@ -1,0 +1,10 @@
+C:\Users\finke\source\repos\winows forms\winows forms\bin\Debug\winows forms.exe.config
+C:\Users\finke\source\repos\winows forms\winows forms\bin\Debug\winows forms.exe
+C:\Users\finke\source\repos\winows forms\winows forms\bin\Debug\winows forms.pdb
+C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.csprojAssemblyReference.cache
+C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows_forms.Form1.resources
+C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows_forms.Properties.Resources.resources
+C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.csproj.GenerateResource.cache
+C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.csproj.CoreCompileInputs.cache
+C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.exe
+C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.pdb
