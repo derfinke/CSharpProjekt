@@ -43,7 +43,7 @@ namespace winows_forms
             Item Hoe = new Item("Magic Hoe", true);
             Item Book = new Item("Magic Book: Loyality", true);
             Item Pascal = new Item("fucking useless piece of shit", false);
-            Item.WoodenStick woodenStick = new Item.WoodenStick();
+            Woodenstick woodenStick = new Woodenstick();
 
             Bathroom.addItemToRoom(Whip);
             Kitchen.addItemToRoom(Hoe);

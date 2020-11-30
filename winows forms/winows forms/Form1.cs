@@ -22,7 +22,6 @@ namespace winows_forms
             InitializeComponent();
             this.maze = new Maze();
             this.player = new Player(maze.getStartRoom());
-            Use_Button.Click += Use_Button_Click;
             updateRoom();
         }
 
@@ -173,7 +172,7 @@ namespace winows_forms
             }
             else
             {
-                it.use(list);
+                it.use(this.player, list);
                 updateRoom();
             }
         }

@@ -27,18 +27,20 @@ public class Item
 	{
 		return this.pickable;
 	}
+
+	public virtual void use(Player user, ListBox list)
+	{
+
+	}
+
+}
+public class Woodenstick : Item
+{
+	public Woodenstick() : base("Wooden Stick", true) { }
+	public override void use(Player user, ListBox list)
+	{
+		Woodenstick woodenstick = new Woodenstick();
+		list.Items.Add(woodenstick);
+	}
 	
-	public virtual void use(ListBox list)
-	{
-		MessageBox.Show("lol");
-	}
-	public class WoodenStick : Item
-	{
-		public WoodenStick() : base("Wooden Stick", true) { }
-		public override void use(ListBox list)
-		{
-			WoodenStick lappen = new WoodenStick();
-			list.Items.Add(lappen);
-		}
-	}
 }
