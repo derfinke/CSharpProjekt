@@ -14,21 +14,23 @@ public class Item
 {
 	private string name;
 	private bool pickable;
-	
+	//Constructor of an Item
 	public Item(string name, bool pickable)
 	{
 		this.name = name;
 		this.pickable = pickable;
 	}
+	//returns the Name of the Item
 	public override string ToString()
 	{
 		return this.name;
 	}
+	//returns if the Player is able to Pick up the Item
 	public bool isPickable()
 	{
 		return this.pickable;
 	}
-
+	//empty use function to be overriden by different Items
 	public virtual void use(Player user, ListBox list)
 	{
 
@@ -36,7 +38,9 @@ public class Item
 }
 public class Woodenstick : Item
 {
+	//constructor of a Wooden Stick
 	public Woodenstick() : base("Wooden Stick", true) { }
+	//adds a second Wooden Stick in the Players Inventory
 	public override void use(Player user, ListBox list)
 	{
 		Woodenstick woodenstick = new Woodenstick();
@@ -51,6 +55,7 @@ public class Door : Item
 	private Room Room1;
 	private Room Room2;
 	private string name;
+	//constructer of a Door
 	public Door(string name, bool locked, char direction1, char direction2, Room Room1, Room Room2) : base(name + "Door", false)
 	{
 		this.locked = locked;
@@ -60,7 +65,7 @@ public class Door : Item
 		this.Room2 = Room2;
 		this.name = name;
 	}
-
+	//reverse the Current state of the Door.Connects the Room with the Door to another Room if the Door is unlocked if the Door is locked it connects the Room to nothing
 	public void toggleLock()
 	{
 		if (this.locked == true)
@@ -110,6 +115,7 @@ public class Key : Item
 	private Room RoomWithDoor;
 	private Room RoomWithDoor2;
 	private string name;
+	//constructor of a Key
 	public Key(string name, Door DoorToUnlock, Room RoomWithDoor,Room RoomWithDoor2) : base(name + "Key", true)
 	{
 		this.DoorToUnlock = DoorToUnlock;
@@ -117,6 +123,7 @@ public class Key : Item
 		this.RoomWithDoor2 = RoomWithDoor2;
 		this.name = name;
 	}
+	//if the Key is used it checks if the Player is in the same Room as the Corresponding Door, if so it opens the Door by calling the toggleLock Method
 	public override void use(Player user, ListBox list)
 	{
 		if(RoomWithDoor == user.getCurrentRoom())

@@ -18,7 +18,7 @@ namespace winows_forms
         private Room winningRoom;
         private Room losingRoom;
         private List<Item> playerBag = new List<Item>();
-
+        //creates the Maze, adds Items to Different Rooms and declares the Start-,Winning- and Losing Room
         public Maze()
         {
             Room Kitchen = new Room("Kitchen");
@@ -43,7 +43,6 @@ namespace winows_forms
             Bedroom.addItemToRoom(BedRoomDoor);
             Bathroom.addItemToRoom(BedRoomDoorKey);
 
-        
             startRoom = Bathroom;
             winningRoom = Exit;
             losingRoom = TourtureChamber;
@@ -61,17 +60,17 @@ namespace winows_forms
             Kitchen.addItemToRoom(woodenStick);
             Bathroom.addItemToRoom(LivingRoomKey);
         }
-
+        //returns the Start Room
         public Room getStartRoom()
         {
             return this.startRoom;
         }
-
+        //returns the Winning Room
         public Room getWinningRoom()
         {
             return this.winningRoom;
         }
-
+        //returns the Losing Room
         public Room getLosingRoom()
         {
             return this.losingRoom;

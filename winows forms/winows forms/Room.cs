@@ -17,17 +17,16 @@ namespace winows_forms
         private Room east;
         private Room west;
         private List<Item> content;
-        private Room RoomToConnect;
-        private Room RoomToRemove;
         private char direction;
-        private char direction1;
        
         #endregion
+        //constructer of a Room
         public Room(string name)
         {
             this.name = name;
             content = new List<Item>();
         }
+        //sets the Rooms that Connect to each other in the corresponding directions
         public void setConnectedRooms(Room north, Room east, Room south, Room west)
         {
             this.north = north;
@@ -35,12 +34,12 @@ namespace winows_forms
             this.west = west;
             this.east = east;
         }
-
+        //returns the Name of the Room
         public String getName()
         {
             return this.name;
         }
-        
+        //returns the Room that is connected in the given direction
         public Room getConnectedRoom(char direction)
         {
             switch (direction)
@@ -72,19 +71,22 @@ namespace winows_forms
                     break;
             }
         }
+        //returns the Content of the Player Inventory
         public List<Item> getContent()
         {
             return this.content;
         }
+        //adds an Item to a Room
         public void addItemToRoom(Item itemToAdd)
         { 
             this.content.Add(itemToAdd);
         }
+        //removes an Item from a Room
         public void removeItemFromRoom(Item itemToRemove)
         {
             this.content.Remove(itemToRemove);
         }
-     
+        //sets a connected Room in just one direction
         public void setConnectedRoomInEast(Room east)
         {
             this.east = east;   
@@ -101,6 +103,7 @@ namespace winows_forms
         {
             this.south = south;
         }
+        //removes the connection to a Room in the given direction
         public void removeRoom(char direction, Room RoomToRemove)
         {
             this.direction = direction;
@@ -123,6 +126,5 @@ namespace winows_forms
                     break;
             }
         }
-
     }
 }

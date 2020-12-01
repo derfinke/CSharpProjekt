@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,13 +17,18 @@ namespace winows_forms
     {
         private Maze maze = new Maze();
         public Player player;
+
+        //Initializes the GUI and creates a new Maze and a new Player and puts him in the Starting Room. Also Updates the Room
         public Form1()
         {
             InitializeComponent();
+            playMusic();
             this.maze = new Maze();
             this.player = new Player(maze.getStartRoom());
             updateRoom();
+
         }
+        //On the press of a Button moves the Player in the given direction
         private void button1_Click(object sender, EventArgs e)
         {
             movePlayer('N');
@@ -47,7 +53,7 @@ namespace winows_forms
         {
 
         }
-
+        //refreshes the Label of the Room everytime the Player moves into another Room. Alos first Clears the Room Item List to later fill it with the given Items
         private void updateRoom()
         {
             this.roomLabel.Text = this.player.getCurrentRoom().getName();
@@ -57,6 +63,7 @@ namespace winows_forms
                 this.Room_Items.Items.Add(it);
             }
         }
+        //Checks if there is a room where the Player wants to move, if there is it checks if it is either the winning or losing room and Displays a coherent message.
         private void movePlayer(char direction)
         {
             if (player.move(direction) == true)
@@ -88,6 +95,7 @@ namespace winows_forms
         {
 
         }
+        //checks if an Item in the Player Listbox is selected, if one is selected it is added to the Item List and the Listbox of the Player
         private void Pickup_Button_Click(object sender, EventArgs e)
         {
             Item it = (Item)this.Room_Items.SelectedItem;
@@ -107,7 +115,7 @@ namespace winows_forms
                 MessageBox.Show("This Item is too heavy to pick up");
             }
         }
-
+        //Does the Same as the PickUp event but Removes said Item from The Player ListBox and adds it to the Room Listbox
         private void Drop_Button_Click(object sender, EventArgs e)
         {
             Item it = (Item)this.Player_Items.SelectedItem;
@@ -123,7 +131,7 @@ namespace winows_forms
                 this.player.getBag().Remove(it);
             }
         }
-
+        //Enables or Disables the PickUpButton based on if an Item is selected
         private void Room_Items_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (Room_Items.SelectedIndex == -1)
@@ -135,7 +143,7 @@ namespace winows_forms
                 Pickup_Button.Enabled = true;
             }
         }
-
+        //Same as before but with the Use and Drop Button
         private void Player_Items_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -152,7 +160,7 @@ namespace winows_forms
             }
 
         }
-
+        //checks if an Item is selected. If an Item is selected it calls the special use function of said Item
         private void Use_Button_Click(object sender, EventArgs e)
         {
             Item it = (Item)this.Player_Items.SelectedItem;
@@ -167,11 +175,16 @@ namespace winows_forms
                 updateRoom();
             }
         }
+        // returns the Content of the Player Listbox
         public ListBox getListbox()
         {
             return this.Player_Items;
         }
+        //plays the Music during the Game
+        private void playMusic()
+        {
+            SoundPlayer Music = new SoundPlayer(@"C:\Users\finke\source\repos\winows forms\The binding of Isaac OST Basement theme.wav");
+            Music.Play();
+        }
     }
-    
-
 }
