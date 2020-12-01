@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="winows_forms.Form1">
-    <Position X="8.75" Y="2.5" Width="1.5" />
+    <Position X="6.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IxIAACRAAiAAABAAQCCAAIICCMI4EAABAGAoAAAISAA=</HashCode>
+      <HashCode>IxIAACRAAiIAABAAQCCAAIICCEI4EAABAGAoAAAASAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="winows_forms.Maze" Collapsed="true">
-    <Position X="11" Y="2.5" Width="1.5" />
+    <Position X="10.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAiAAAEAAAAAAAAAAgAAAAAAABAAAAABAAAA=</HashCode>
       <FileName>Maze.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="winows_forms.Player">
-    <Position X="13" Y="2.5" Width="1.5" />
+    <Position X="12.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAASAAACAgAAACBAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Player.cs</FileName>
@@ -29,7 +29,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="winows_forms.Room">
-    <Position X="10.25" Y="4.25" Width="1.5" />
+    <Position X="9" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAECEAAAAAQAgAAAAAAQAAAAAAAkAAAAAAAEBAAggAA=</HashCode>
       <FileName>Room.cs</FileName>
@@ -48,16 +48,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Item">
-    <Position X="14.75" Y="4.25" Width="1.5" />
-    <NestedTypes>
-      <Class Name="Item.WoodenStick" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Item.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-    </NestedTypes>
+    <Position X="14.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAEAAEAAAAAAAAAAAEAAAABAAAAEAABAQ=</HashCode>
+      <HashCode>AAAAAAAAAAAAEAAEAAAAAAAAAAAEAAAABAAAAAAAAAQ=</HashCode>
       <FileName>Item.cs</FileName>
     </TypeIdentifier>
   </Class>

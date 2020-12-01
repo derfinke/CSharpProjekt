@@ -16,7 +16,6 @@ namespace winows_forms
     {
         private Maze maze = new Maze();
         public Player player;
-        
         public Form1()
         {
             InitializeComponent();
@@ -24,25 +23,21 @@ namespace winows_forms
             this.player = new Player(maze.getStartRoom());
             updateRoom();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             movePlayer('N');
             updateRoom();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             movePlayer('E');
             updateRoom();
         }
-
         private void hurensohn_Click_1(object sender, EventArgs e)
         {
             movePlayer('S');
             updateRoom();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             movePlayer('W');
@@ -55,16 +50,13 @@ namespace winows_forms
 
         private void updateRoom()
         {
-
             this.roomLabel.Text = this.player.getCurrentRoom().getName();
             this.Room_Items.Items.Clear();
             foreach (Item it in player.getCurrentRoom().getContent())
             {
                 this.Room_Items.Items.Add(it);
             }
-
         }
-
         private void movePlayer(char direction)
         {
             if (player.move(direction) == true)
@@ -96,7 +88,6 @@ namespace winows_forms
         {
 
         }
-
         private void Pickup_Button_Click(object sender, EventArgs e)
         {
             Item it = (Item)this.Room_Items.SelectedItem;

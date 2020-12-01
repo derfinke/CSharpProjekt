@@ -27,14 +27,23 @@ namespace winows_forms
             Room Bedroom = new Room("Bedroom");
             Room TourtureChamber = new Room("Torture Chamber");
             Room Exit = new Room("Exit");
-
+            Door LivingRoomDoor = new Door("Blue", true, 'W', 'E', LivingRoom, Exit);
+            Key LivingRoomKey = new Key("Blue", LivingRoomDoor, LivingRoom, Exit);
+            Door BedRoomDoor = new Door("Red", true, 'E', 'W', Bathroom, Bedroom);
+            Key BedRoomDoorKey = new Key("Red", BedRoomDoor, Bedroom, Bathroom);
+            
             Kitchen.setConnectedRooms(null, LivingRoom, Bathroom, null);
-            Bathroom.setConnectedRooms(Kitchen, Bedroom, null, null);
-            Bedroom.setConnectedRooms(LivingRoom, null, TourtureChamber, Bathroom);
-            LivingRoom.setConnectedRooms(null, Exit, Bedroom, Kitchen);
+            Bathroom.setConnectedRooms(Kitchen,null,null,null);
+            Bedroom.setConnectedRooms(LivingRoom, null, TourtureChamber, null);
+            LivingRoom.setConnectedRooms(null, null, Bedroom, Kitchen);
             TourtureChamber.setConnectedRooms(Bedroom, null, null, null);
-            Exit.setConnectedRooms(null, LivingRoom, null, null);
+            Exit.setConnectedRooms(null, null, null, null);
+            LivingRoom.addItemToRoom(LivingRoomDoor);
+            Bathroom.addItemToRoom(BedRoomDoor);
+            Bedroom.addItemToRoom(BedRoomDoor);
+            Bathroom.addItemToRoom(BedRoomDoorKey);
 
+        
             startRoom = Bathroom;
             winningRoom = Exit;
             losingRoom = TourtureChamber;
@@ -48,10 +57,9 @@ namespace winows_forms
             Bathroom.addItemToRoom(Whip);
             Kitchen.addItemToRoom(Hoe);
             Bedroom.addItemToRoom(Book);
-            LivingRoom.addItemToRoom(Pascal);
-            LivingRoom.addItemToRoom(woodenStick);
-
-
+            Kitchen.addItemToRoom(Pascal);
+            Kitchen.addItemToRoom(woodenStick);
+            Bathroom.addItemToRoom(LivingRoomKey);
         }
 
         public Room getStartRoom()
@@ -68,7 +76,5 @@ namespace winows_forms
         {
             return this.losingRoom;
         }
-
-
     }
 }
