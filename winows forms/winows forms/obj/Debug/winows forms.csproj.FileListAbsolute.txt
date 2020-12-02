@@ -8,3 +8,4 @@ C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.csp
 C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.csproj.CoreCompileInputs.cache
 C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.exe
 C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows forms.pdb
+C:\Users\finke\source\repos\winows forms\winows forms\obj\Debug\winows_forms.Form2.resources

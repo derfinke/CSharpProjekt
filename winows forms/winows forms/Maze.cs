@@ -67,7 +67,7 @@ namespace winows_forms
         }
         //returns the Winning Room
         public Room getWinningRoom()
-        {
+        { 
             return this.winningRoom;
         }
         //returns the Losing Room

@@ -72,13 +72,13 @@ namespace winows_forms
                 {
                     updateRoom();
                     MessageBox.Show("Congratulations you have found the holy pepe");
-                    Close();
+                    this.Close();
                 }
                 else if (this.player.getCurrentRoom() == maze.getLosingRoom())
                 {
                     updateRoom();
                     MessageBox.Show("You died and became a filthy Casual");
-                    Close();
+                    this.Close();
                 }
             }
             else
@@ -183,8 +183,13 @@ namespace winows_forms
         //plays the Music during the Game
         private void playMusic()
         {
-            SoundPlayer Music = new SoundPlayer(@"C:\Users\finke\source\repos\winows forms\The binding of Isaac OST Basement theme.wav");
+            SoundPlayer Music = new SoundPlayer(@"C:\Users\finke\source\repos\winows forms\winows forms\Resources\The binding of Isaac OST Basement theme.wav");
             Music.Play();
+        }
+
+        private void GameTimer_Event(object sender, EventArgs e)
+        {
+
         }
     }
 }

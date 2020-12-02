@@ -116,7 +116,7 @@ public class Key : Item
 	private Room RoomWithDoor2;
 	private string name;
 	//constructor of a Key
-	public Key(string name, Door DoorToUnlock, Room RoomWithDoor,Room RoomWithDoor2) : base(name + "Key", true)
+	public Key(string name, Door DoorToUnlock, Room RoomWithDoor,Room RoomWithDoor2) : base(name + " Key", true)
 	{
 		this.DoorToUnlock = DoorToUnlock;
 		this.RoomWithDoor = RoomWithDoor;
@@ -126,11 +126,11 @@ public class Key : Item
 	//if the Key is used it checks if the Player is in the same Room as the Corresponding Door, if so it opens the Door by calling the toggleLock Method
 	public override void use(Player user, ListBox list)
 	{
-		if(RoomWithDoor == user.getCurrentRoom())
+		if (RoomWithDoor == user.getCurrentRoom())
 		{
 			DoorToUnlock.toggleLock();
 		}
-		else if(RoomWithDoor2 == user.getCurrentRoom())
+		else if (RoomWithDoor2 == user.getCurrentRoom())
 		{
 			DoorToUnlock.toggleLock();
 		}
@@ -139,4 +139,8 @@ public class Key : Item
 			MessageBox.Show("I cann see nothing to use the key with");
 		}
 	}
+}
+public class Brickwall : Item
+{
+	public Brickwall() : base ("Brickwall", false) { }
 }

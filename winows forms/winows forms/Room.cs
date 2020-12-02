@@ -18,6 +18,7 @@ namespace winows_forms
         private Room west;
         private List<Item> content;
         private char direction;
+        private Room RoomToRemove;
        
         #endregion
         //constructer of a Room
